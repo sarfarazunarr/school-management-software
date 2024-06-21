@@ -15,6 +15,9 @@ public:
     explicit NewStudent(QWidget *parent = nullptr);
     ~NewStudent();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::NewStudent *ui;
 };

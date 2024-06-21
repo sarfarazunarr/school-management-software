@@ -37,10 +37,10 @@
    <widget class="QScrollArea" name="scrollArea">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>20</x>
       <y>80</y>
       <width>731</width>
-      <height>461</height>
+      <height>411</height>
      </rect>
     </property>
     <property name="widgetResizable">
@@ -52,99 +52,18 @@
        <x>0</x>
        <y>0</y>
        <width>729</width>
-       <height>459</height>
+       <height>409</height>
       </rect>
      </property>
-     <widget class="QTableWidget" name="tableWidget">
+     <widget class="QTableView" name="StudentDataTable">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
         <width>731</width>
-        <height>461</height>
+        <height>411</height>
        </rect>
       </property>
-      <row/>
-      <column>
-       <property name="text">
-        <string>Name</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Father Name</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Class</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Mobile Number</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Date of Admission</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Date of Birth</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Address</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Action</string>
-       </property>
-      </column>
-      <item row="0" column="0">
-       <property name="text">
-        <string>Sarfaraz</string>
-       </property>
-      </item>
-      <item row="0" column="1">
-       <property name="text">
-        <string>Saleem Ahmed</string>
-       </property>
-      </item>
-      <item row="0" column="2">
-       <property name="text">
-        <string>10th</string>
-       </property>
-      </item>
-      <item row="0" column="3">
-       <property name="text">
-        <string>03012345678</string>
-       </property>
-      </item>
-      <item row="0" column="4">
-       <property name="text">
-        <string>28/08/2022</string>
-       </property>
-      </item>
-      <item row="0" column="5">
-       <property name="text">
-        <string>02/2/2008</string>
-       </property>
-      </item>
-      <item row="0" column="6">
-       <property name="text">
-        <string>Hala</string>
-       </property>
-      </item>
-      <item row="0" column="7">
-       <property name="text">
-        <string>View</string>
-       </property>
-      </item>
      </widget>
     </widget>
    </widget>

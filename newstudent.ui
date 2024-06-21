@@ -58,7 +58,7 @@
       <string>Name</string>
      </property>
      <property name="buddy">
-      <cstring>lineEdit</cstring>
+      <cstring>studentName</cstring>
      </property>
     </widget>
     <widget class="QLabel" name="label_3">
@@ -74,7 +74,7 @@
       <string>DOB:</string>
      </property>
      <property name="buddy">
-      <cstring>dateEdit</cstring>
+      <cstring>dobDate</cstring>
      </property>
     </widget>
     <widget class="QLabel" name="label_6">
@@ -90,7 +90,7 @@
       <string>CNIC/Bform</string>
      </property>
      <property name="buddy">
-      <cstring>lineEdit_2</cstring>
+      <cstring>cnicLineEdit</cstring>
      </property>
     </widget>
     <widget class="QLabel" name="label_7">
@@ -104,9 +104,6 @@
      </property>
      <property name="text">
       <string>Age</string>
-     </property>
-     <property name="buddy">
-      <cstring>lineEdit_6</cstring>
      </property>
     </widget>
     <widget class="QLabel" name="label_8">
@@ -122,7 +119,7 @@
       <string>Gender</string>
      </property>
      <property name="buddy">
-      <cstring>comboBox</cstring>
+      <cstring>gender</cstring>
      </property>
     </widget>
     <widget class="QLabel" name="label_9">
@@ -138,7 +135,7 @@
       <string>Prev Class</string>
      </property>
      <property name="buddy">
-      <cstring>lineEdit_4</cstring>
+      <cstring>previousClassLineEdit</cstring>
      </property>
     </widget>
     <widget class="QLabel" name="label_10">
@@ -154,10 +151,10 @@
       <string>New Class</string>
      </property>
      <property name="buddy">
-      <cstring>lineEdit_5</cstring>
+      <cstring>newClassLineEdit</cstring>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="studentName">
      <property name="geometry">
       <rect>
        <x>80</x>
@@ -167,7 +164,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_2">
+    <widget class="QLineEdit" name="cnicLineEdit">
      <property name="geometry">
       <rect>
        <x>80</x>
@@ -177,7 +174,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_4">
+    <widget class="QLineEdit" name="previousClassLineEdit">
      <property name="geometry">
       <rect>
        <x>80</x>
@@ -187,7 +184,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_5">
+    <widget class="QLineEdit" name="newClassLineEdit">
      <property name="geometry">
       <rect>
        <x>270</x>
@@ -197,17 +194,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_6">
-     <property name="geometry">
-      <rect>
-       <x>250</x>
-       <y>70</y>
-       <width>131</width>
-       <height>24</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QComboBox" name="comboBox">
+    <widget class="QComboBox" name="gender">
      <property name="geometry">
       <rect>
        <x>80</x>
@@ -227,12 +214,22 @@
       </property>
      </item>
     </widget>
-    <widget class="QDateEdit" name="dateEdit">
+    <widget class="QDateEdit" name="dobDate">
      <property name="geometry">
       <rect>
        <x>79</x>
        <y>70</y>
        <width>111</width>
+       <height>25</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="ageSpinBox">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>70</y>
+       <width>131</width>
        <height>25</height>
       </rect>
      </property>
@@ -255,7 +252,7 @@
       <rect>
        <x>10</x>
        <y>40</y>
-       <width>81</width>
+       <width>91</width>
        <height>16</height>
       </rect>
      </property>
@@ -263,7 +260,7 @@
       <string>Father Name</string>
      </property>
      <property name="buddy">
-      <cstring>lineEdit_3</cstring>
+      <cstring>fatherNameLineEdit</cstring>
      </property>
     </widget>
     <widget class="QLabel" name="label_12">
@@ -271,15 +268,12 @@
       <rect>
        <x>10</x>
        <y>70</y>
-       <width>49</width>
+       <width>91</width>
        <height>16</height>
       </rect>
      </property>
      <property name="text">
-      <string>Guardian</string>
-     </property>
-     <property name="buddy">
-      <cstring>checkBox</cstring>
+      <string>Guardian Name</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_13">
@@ -295,36 +289,20 @@
       <string>CNIC</string>
      </property>
      <property name="buddy">
-      <cstring>lineEdit_7</cstring>
+      <cstring>guardianCnicLineEdit</cstring>
      </property>
     </widget>
-    <widget class="QLabel" name="label_14">
+    <widget class="QLineEdit" name="fatherNameLineEdit">
      <property name="geometry">
       <rect>
-       <x>220</x>
-       <y>70</y>
-       <width>49</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Name</string>
-     </property>
-     <property name="buddy">
-      <cstring>lineEdit_10</cstring>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_3">
-     <property name="geometry">
-      <rect>
-       <x>90</x>
+       <x>100</x>
        <y>40</y>
-       <width>291</width>
+       <width>281</width>
        <height>24</height>
       </rect>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_7">
+    <widget class="QLineEdit" name="guardianCnicLineEdit">
      <property name="geometry">
       <rect>
        <x>80</x>
@@ -334,30 +312,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_10">
-     <property name="geometry">
-      <rect>
-       <x>260</x>
-       <y>70</y>
-       <width>121</width>
-       <height>24</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="checkBox">
-     <property name="geometry">
-      <rect>
-       <x>90</x>
-       <y>70</y>
-       <width>121</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Is Father Guardian?</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_8">
+    <widget class="QLineEdit" name="guardianPhoneNumberLineEdit">
      <property name="geometry">
       <rect>
        <x>80</x>
@@ -380,7 +335,17 @@
       <string>Phone No:</string>
      </property>
      <property name="buddy">
-      <cstring>lineEdit_8</cstring>
+      <cstring>guardianPhoneNumberLineEdit</cstring>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="guardianNameLineEdit">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>70</y>
+       <width>281</width>
+       <height>24</height>
+      </rect>
      </property>
     </widget>
    </widget>
@@ -396,7 +361,7 @@
     <property name="title">
      <string>Enter Address</string>
     </property>
-    <widget class="QPlainTextEdit" name="plainTextEdit">
+    <widget class="QPlainTextEdit" name="guardianAddressLineEdit">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -442,19 +407,16 @@ border-radius: 10px;</string>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <tabstops>
-  <tabstop>lineEdit</tabstop>
-  <tabstop>dateEdit</tabstop>
-  <tabstop>lineEdit_2</tabstop>
-  <tabstop>comboBox</tabstop>
-  <tabstop>lineEdit_4</tabstop>
-  <tabstop>lineEdit_6</tabstop>
-  <tabstop>lineEdit_5</tabstop>
-  <tabstop>lineEdit_3</tabstop>
-  <tabstop>checkBox</tabstop>
-  <tabstop>lineEdit_10</tabstop>
-  <tabstop>lineEdit_7</tabstop>
-  <tabstop>lineEdit_8</tabstop>
-  <tabstop>plainTextEdit</tabstop>
+  <tabstop>studentName</tabstop>
+  <tabstop>dobDate</tabstop>
+  <tabstop>cnicLineEdit</tabstop>
+  <tabstop>gender</tabstop>
+  <tabstop>previousClassLineEdit</tabstop>
+  <tabstop>newClassLineEdit</tabstop>
+  <tabstop>fatherNameLineEdit</tabstop>
+  <tabstop>guardianCnicLineEdit</tabstop>
+  <tabstop>guardianPhoneNumberLineEdit</tabstop>
+  <tabstop>guardianAddressLineEdit</tabstop>
   <tabstop>pushButton</tabstop>
   <tabstop>pushButton_2</tabstop>
  </tabstops>
