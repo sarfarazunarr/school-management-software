@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Timetable</class>
+ <widget class="QMainWindow" name="Timetable">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1349</width>
+    <height>641</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>20</y>
+      <width>161</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>18</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>TimeTable of </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="dayname">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>20</y>
+      <width>161</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>18</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QTableView" name="timetabledata">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>90</y>
+      <width>1281</width>
+      <height>491</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>35</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>View Timetable of</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="Daysname">
+    <property name="geometry">
+     <rect>
+      <x>1160</x>
+      <y>30</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Monday</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Tuesday</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Wednesday</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Thursday</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Friday</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Saturday</string>
+     </property>
+    </item>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1349</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuView_timetable_of">
+    <property name="title">
+     <string>View timetable of</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuActions">
+    <property name="title">
+     <string>Actions</string>
+    </property>
+    <addaction name="actionaddData"/>
+   </widget>
+   <addaction name="menuView_timetable_of"/>
+   <addaction name="menuActions"/>
+  </widget>
+  <action name="actionaddData">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>addData</string>
+   </property>
+   <property name="toolTip">
+    <string>Add New Data</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+N</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::NoRole</enum>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

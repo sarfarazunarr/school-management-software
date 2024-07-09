@@ -120,7 +120,7 @@ font: 600 10pt &quot;Segoe UI&quot;;
 border-radius: 5px;</string>
      </property>
      <property name="text">
-      <string>Finance</string>
+      <string>TimeTable</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_5">

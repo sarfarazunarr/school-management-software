@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Newtimetable</class>
+ <widget class="QMainWindow" name="Newtimetable">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>439</width>
+    <height>390</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>10</y>
+      <width>311</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Add Data in Timetable</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>70</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Select Day</string>
+    </property>
+    <property name="buddy">
+     <cstring>day</cstring>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="day">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>70</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Monday</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Tuesday</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Wednesday</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Thursday</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Friday</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Saturday</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="className">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>70</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Class 1</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Class 2</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Class 3</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Class 4</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Class 5</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Class 6</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Class 7</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Class 8</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Class 9</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Class 10</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>70</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Select Class</string>
+    </property>
+    <property name="buddy">
+     <cstring>className</cstring>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>120</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Period No:</string>
+    </property>
+    <property name="buddy">
+     <cstring>period</cstring>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="period">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>120</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>170</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Subject Name</string>
+    </property>
+    <property name="buddy">
+     <cstring>subject</cstring>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>210</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Teacher Name</string>
+    </property>
+    <property name="buddy">
+     <cstring>teacher</cstring>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>250</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Start Time</string>
+    </property>
+    <property name="buddy">
+     <cstring>startTime</cstring>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>250</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>End Time</string>
+    </property>
+    <property name="buddy">
+     <cstring>endTime</cstring>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="subject">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>170</y>
+      <width>271</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="teacher">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>210</y>
+      <width>271</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTimeEdit" name="startTime">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>250</y>
+      <width>118</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTimeEdit" name="endTime">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>250</y>
+      <width>118</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>300</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Add Now</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>310</y>
+      <width>80</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Clear All</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>439</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>startTime</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>81</x>
+     <y>336</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>133</x>
+     <y>289</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>endTime</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>102</x>
+     <y>344</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>295</x>
+     <y>295</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>teacher</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>66</x>
+     <y>333</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>124</x>
+     <y>252</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>subject</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>44</x>
+     <y>331</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>124</x>
+     <y>198</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Newtimetable</sender>
+   <signal>iconSizeChanged(QSize)</signal>
+   <receiver>period</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>31</x>
+     <y>330</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>91</x>
+     <y>156</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>day</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>35</x>
+     <y>337</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>104</x>
+     <y>107</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>className</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>54</x>
+     <y>337</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>278</x>
+     <y>105</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

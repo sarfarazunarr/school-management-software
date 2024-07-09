@@ -18,6 +18,14 @@ public:
 private slots:
     void on_actionNew_Student_triggered();
 
+    void on_idsearchbtn_clicked();
+
+    void on_actionUpdate_Student_triggered();
+
+    void on_actiondeleteStudent_triggered();
+
+    void on_studentSearchbtn_clicked();
+
 private:
     Ui::Student *ui;
 };
