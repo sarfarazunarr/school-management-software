@@ -29,19 +29,18 @@ Timetable::Timetable(QWidget *parent)
         qDebug() << "TimeTable database is ready!";
     }
 
+    qDebug() << "Passed Timetable";
     // Get the current day
     QDate currentDate = QDate::currentDate();
     QString dayString = currentDate.toString("dddd");
-    ui->Daysname->setCurrentText(dayString);
-    QString Day = ui->Daysname->currentText();
-    ui->dayname->setText(Day);
+    ui->dayname->setText(dayString);
 
     // Set up the model
     QStandardItemModel *model = new QStandardItemModel();
 
     // Fetch data for the current day
     query.prepare("SELECT class, period, subject, teacher FROM timetable WHERE day = :day");
-    query.bindValue(":day", Day);
+    query.bindValue(":day", "tuesday");
     if (!query.exec()) {
         qDebug() << "Error: Could not retrieve timetable data." << query.lastError();
     } else {

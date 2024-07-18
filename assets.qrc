@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/new/images">
+        <file>C:/Users/Administrator/Downloads/splash.jpeg</file>
+        <file>C:/Users/Administrator/Downloads/trash.png</file>
+        <file>C:/Users/Administrator/Downloads/pen-square.png</file>
+        <file>C:/Users/Administrator/Downloads/square-plus.png</file>
+        <file>C:/Users/Administrator/Downloads/attendance.png</file>
+        <file>C:/Users/Administrator/Downloads/student.png</file>
+        <file>C:/Users/Administrator/Downloads/teacher.png</file>
+    </qresource>
+</RCC>

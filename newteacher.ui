@@ -13,6 +13,11 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: white;
+font: 10pt &quot;Bahnschrift&quot;;
+color: rgb(0, 0, 0);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
     <property name="geometry">
@@ -25,9 +30,14 @@
     </property>
     <property name="font">
      <font>
+      <family>Tw Cen MT</family>
       <pointsize>18</pointsize>
+      <italic>false</italic>
       <bold>true</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 700 18pt &quot;Tw Cen MT&quot;;</string>
     </property>
     <property name="text">
      <string>Add New Teacher</string>
@@ -43,8 +53,9 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 0, 0);
-color: rgb(255, 255, 255);;</string>
+     <string notr="true">background-color: rgb(170, 0, 0);
+color: rgb(255, 255, 255);
+border-radius: 5px;</string>
     </property>
     <property name="text">
      <string>Cancel</string>
@@ -158,9 +169,9 @@ color: rgb(255, 255, 255);;</string>
     <widget class="QLineEdit" name="teacherName">
      <property name="geometry">
       <rect>
-       <x>80</x>
+       <x>90</x>
        <y>40</y>
-       <width>301</width>
+       <width>291</width>
        <height>24</height>
       </rect>
      </property>
@@ -168,9 +179,9 @@ color: rgb(255, 255, 255);;</string>
     <widget class="QLineEdit" name="cnicLineEdit">
      <property name="geometry">
       <rect>
-       <x>80</x>
+       <x>90</x>
        <y>100</y>
-       <width>301</width>
+       <width>291</width>
        <height>24</height>
       </rect>
      </property>
@@ -178,9 +189,9 @@ color: rgb(255, 255, 255);;</string>
     <widget class="QLineEdit" name="qualification">
      <property name="geometry">
       <rect>
-       <x>80</x>
+       <x>90</x>
        <y>160</y>
-       <width>291</width>
+       <width>281</width>
        <height>24</height>
       </rect>
      </property>
@@ -188,7 +199,7 @@ color: rgb(255, 255, 255);;</string>
     <widget class="QComboBox" name="gender">
      <property name="geometry">
       <rect>
-       <x>80</x>
+       <x>90</x>
        <y>130</y>
        <width>111</width>
        <height>24</height>
@@ -208,7 +219,7 @@ color: rgb(255, 255, 255);;</string>
     <widget class="QDateEdit" name="dobDate">
      <property name="geometry">
       <rect>
-       <x>79</x>
+       <x>90</x>
        <y>70</y>
        <width>111</width>
        <height>25</height>
@@ -244,9 +255,9 @@ color: rgb(255, 255, 255);;</string>
     <widget class="QLineEdit" name="department">
      <property name="geometry">
       <rect>
-       <x>80</x>
+       <x>90</x>
        <y>220</y>
-       <width>291</width>
+       <width>281</width>
        <height>24</height>
       </rect>
      </property>
@@ -270,9 +281,9 @@ color: rgb(255, 255, 255);;</string>
     <widget class="QLineEdit" name="designation">
      <property name="geometry">
       <rect>
-       <x>80</x>
+       <x>90</x>
        <y>190</y>
-       <width>291</width>
+       <width>281</width>
        <height>24</height>
       </rect>
      </property>
@@ -296,9 +307,9 @@ color: rgb(255, 255, 255);;</string>
     <widget class="QDateEdit" name="joiningDate">
      <property name="geometry">
       <rect>
-       <x>80</x>
+       <x>90</x>
        <y>250</y>
-       <width>111</width>
+       <width>101</width>
        <height>25</height>
       </rect>
      </property>
@@ -322,9 +333,9 @@ color: rgb(255, 255, 255);;</string>
     <widget class="QLineEdit" name="salary">
      <property name="geometry">
       <rect>
-       <x>240</x>
+       <x>250</x>
        <y>250</y>
-       <width>131</width>
+       <width>121</width>
        <height>24</height>
       </rect>
      </property>
@@ -348,9 +359,9 @@ color: rgb(255, 255, 255);;</string>
     <widget class="QLineEdit" name="phone_number">
      <property name="geometry">
       <rect>
-       <x>80</x>
+       <x>90</x>
        <y>280</y>
-       <width>291</width>
+       <width>281</width>
        <height>24</height>
       </rect>
      </property>
@@ -358,9 +369,9 @@ color: rgb(255, 255, 255);;</string>
     <widget class="QLineEdit" name="email">
      <property name="geometry">
       <rect>
-       <x>80</x>
+       <x>90</x>
        <y>310</y>
-       <width>291</width>
+       <width>281</width>
        <height>24</height>
       </rect>
      </property>
@@ -370,7 +381,7 @@ color: rgb(255, 255, 255);;</string>
       <rect>
        <x>10</x>
        <y>310</y>
-       <width>81</width>
+       <width>71</width>
        <height>21</height>
       </rect>
      </property>
@@ -390,6 +401,11 @@ color: rgb(255, 255, 255);;</string>
       <width>101</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0.291, y1:0.289773, x2:1, y2:1, stop:0 rgba(14, 21, 127, 255), stop:1 rgba(138, 0, 207, 255));
+color: rgb(255, 255, 255);
+border-radius: 5px;</string>
     </property>
     <property name="text">
      <string>Save Now</string>
@@ -425,12 +441,29 @@ color: rgb(255, 255, 255);;</string>
      <x>0</x>
      <y>0</y>
      <width>506</width>
-     <height>21</height>
+     <height>18</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <tabstops>
+  <tabstop>teacherName</tabstop>
+  <tabstop>dobDate</tabstop>
+  <tabstop>ageSpinBox</tabstop>
+  <tabstop>cnicLineEdit</tabstop>
+  <tabstop>gender</tabstop>
+  <tabstop>qualification</tabstop>
+  <tabstop>designation</tabstop>
+  <tabstop>department</tabstop>
+  <tabstop>joiningDate</tabstop>
+  <tabstop>salary</tabstop>
+  <tabstop>phone_number</tabstop>
+  <tabstop>email</tabstop>
+  <tabstop>address</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>pushButton_2</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

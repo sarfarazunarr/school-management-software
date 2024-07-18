@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1366</width>
-    <height>728</height>
+    <width>800</width>
+    <height>624</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
       <x>10</x>
       <y>40</y>
       <width>251</width>
-      <height>621</height>
+      <height>561</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -158,27 +158,7 @@ font: 600 10pt &quot;Segoe UI&quot;;
 border-radius: 5px;</string>
      </property>
      <property name="text">
-      <string>Admission</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_7">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>420</y>
-       <width>161</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: transparent;
-color: rgb(255, 255, 255);
-font: 600 10pt &quot;Segoe UI&quot;;
-border: 1px solid white;
-border-radius: 5px;</string>
-     </property>
-     <property name="text">
-      <string>Settings</string>
+      <string>Attendance Portal</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_2">
@@ -203,8 +183,8 @@ color: rgb(255, 255, 255);</string>
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>500</y>
-       <width>191</width>
+       <y>430</y>
+       <width>201</width>
        <height>31</height>
       </rect>
      </property>
@@ -221,7 +201,7 @@ color: rgb(255, 255, 255);</string>
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>540</y>
+       <y>480</y>
        <width>161</width>
        <height>31</height>
       </rect>
@@ -234,6 +214,368 @@ border-radius: 5px;</string>
      </property>
      <property name="text">
       <string>Report Any Issue</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>30</y>
+      <width>241</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Tw Cen MT</family>
+      <pointsize>36</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 127);
+background-color: transparent;</string>
+    </property>
+    <property name="text">
+     <string>Welcome!</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>90</y>
+      <width>31</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Date:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="today">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>90</y>
+      <width>141</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Date:</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="widget_2" native="true">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>150</y>
+      <width>241</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0.324022 rgba(0, 78, 253, 255), stop:0.98324 rgba(0, 36, 255, 255), stop:1 rgba(255, 255, 255, 255));
+padding: 5px;
+border-radius: 10px;
+font: 700 18pt &quot;Tw Cen MT&quot;;</string>
+    </property>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>221</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+background-color: transparent;</string>
+     </property>
+     <property name="text">
+      <string>View Doc Templates</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_7">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>201</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background: transparent;
+font: 8pt &quot;Segoe UI&quot;;
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Edit and Print Notifications, Letters</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_7">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>80</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(223, 223, 223);
+color: rgb(9, 15, 127);
+font: 600 10pt &quot;Segoe UI&quot;;
+border-radius: 5px;</string>
+     </property>
+     <property name="text">
+      <string>View</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="widget_3" native="true">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>150</y>
+      <width>241</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 0, 0, 255), stop:1 rgba(83, 0, 136, 255));
+padding: 5px;
+border-radius: 10px;
+font: 700 18pt &quot;Tw Cen MT&quot;;</string>
+    </property>
+    <widget class="QLabel" name="label_9">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>211</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+background-color: transparent;</string>
+     </property>
+     <property name="text">
+      <string>Visit Your Website</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>201</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background: transparent;
+font: 8pt &quot;Segoe UI&quot;;
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Maintain, Manage And Visit Website</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_9">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>80</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(223, 223, 223);
+color: rgb(9, 15, 127);
+font: 600 10pt &quot;Segoe UI&quot;;
+border-radius: 5px;</string>
+     </property>
+     <property name="text">
+      <string>Visit</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="widget_4" native="true">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>300</y>
+      <width>241</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(157, 0, 255, 255), stop:1 rgba(255, 0, 0, 255));
+padding: 5px;
+border-radius: 10px;
+font: 700 45pt &quot;Tw Cen MT&quot;;</string>
+    </property>
+    <widget class="QLabel" name="label_13">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>30</y>
+       <width>91</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+background-color: transparent;</string>
+     </property>
+     <property name="text">
+      <string>15</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_12">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>80</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background: transparent;
+font: 8pt &quot;Segoe UI&quot;;
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Students are Enrolled</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="widget_5" native="true">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>300</y>
+      <width>241</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(27, 0, 0, 255), stop:1 rgba(200, 0, 255, 255));
+padding: 5px;
+border-radius: 10px;
+font: 700 45pt &quot;Tw Cen MT&quot;;</string>
+    </property>
+    <widget class="QLabel" name="label_15">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>80</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background: transparent;
+font: 8pt &quot;Segoe UI&quot;;
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Staff is registered</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_14">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>30</y>
+       <width>91</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+background-color: transparent;</string>
+     </property>
+     <property name="text">
+      <string>15</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="widget_7" native="true">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>450</y>
+      <width>491</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 255, 89, 255), stop:0.648045 rgba(3, 118, 0, 255));
+padding: 5px;
+border-radius: 10px;
+font: 700 22pt &quot;Tw Cen MT&quot;;</string>
+    </property>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>10</y>
+       <width>221</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+background-color: transparent;</string>
+     </property>
+     <property name="text">
+      <string>Attendance Book</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_10">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>40</y>
+       <width>241</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background: transparent;
+font: 8pt &quot;Segoe UI&quot;;
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>View, Update and Manage Attendance Portal</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_10">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>80</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(223, 223, 223);
+color: rgb(9, 15, 127);
+font: 600 10pt &quot;Segoe UI&quot;;
+border-radius: 5px;</string>
+     </property>
+     <property name="text">
+      <string>Open Portal</string>
      </property>
     </widget>
    </widget>

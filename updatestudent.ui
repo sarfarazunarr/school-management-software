@@ -13,6 +13,11 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: white;
+font: 10pt &quot;Bahnschrift&quot;;
+color: rgb(0, 0, 0);</string>
+  </property>
   <widget class="QGroupBox" name="groupBox_2">
    <property name="geometry">
     <rect>
@@ -31,7 +36,7 @@
       <x>10</x>
       <y>40</y>
       <width>91</width>
-      <height>16</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -47,7 +52,7 @@
       <x>10</x>
       <y>70</y>
       <width>91</width>
-      <height>16</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -60,7 +65,7 @@
       <x>10</x>
       <y>100</y>
       <width>81</width>
-      <height>16</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -83,9 +88,9 @@
    <widget class="QLineEdit" name="guardianCnicLineEdit">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>100</x>
       <y>100</y>
-      <width>301</width>
+      <width>281</width>
       <height>24</height>
      </rect>
     </property>
@@ -93,9 +98,9 @@
    <widget class="QLineEdit" name="guardianPhoneNumberLineEdit">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>100</x>
       <y>130</y>
-      <width>301</width>
+      <width>281</width>
       <height>24</height>
      </rect>
     </property>
@@ -106,7 +111,7 @@
       <x>10</x>
       <y>130</y>
       <width>81</width>
-      <height>16</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -138,9 +143,14 @@
    </property>
    <property name="font">
     <font>
+     <family>Tw Cen MT</family>
      <pointsize>18</pointsize>
+     <italic>false</italic>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 700 18pt &quot;Tw Cen MT&quot;;</string>
    </property>
    <property name="text">
     <string>Update Student</string>
@@ -154,6 +164,11 @@
      <width>101</width>
      <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: qlineargradient(spread:pad, x1:0.291, y1:0.289773, x2:1, y2:1, stop:0 rgba(14, 21, 127, 255), stop:1 rgba(138, 0, 207, 255));
+color: rgb(255, 255, 255);
+border-radius: 5px;</string>
    </property>
    <property name="text">
     <string>Update</string>
@@ -218,7 +233,7 @@ border-radius: 10px;</string>
       <x>10</x>
       <y>40</y>
       <width>49</width>
-      <height>16</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -234,7 +249,7 @@ border-radius: 10px;</string>
       <x>10</x>
       <y>70</y>
       <width>49</width>
-      <height>16</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -250,7 +265,7 @@ border-radius: 10px;</string>
       <x>10</x>
       <y>100</y>
       <width>81</width>
-      <height>16</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -266,7 +281,7 @@ border-radius: 10px;</string>
       <x>220</x>
       <y>70</y>
       <width>49</width>
-      <height>16</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -279,7 +294,7 @@ border-radius: 10px;</string>
       <x>10</x>
       <y>130</y>
       <width>81</width>
-      <height>16</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -295,7 +310,7 @@ border-radius: 10px;</string>
       <x>10</x>
       <y>160</y>
       <width>81</width>
-      <height>16</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -308,9 +323,9 @@ border-radius: 10px;</string>
    <widget class="QLineEdit" name="studentName">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>90</x>
       <y>40</y>
-      <width>301</width>
+      <width>291</width>
       <height>24</height>
      </rect>
     </property>
@@ -318,9 +333,9 @@ border-radius: 10px;</string>
    <widget class="QLineEdit" name="cnicLineEdit">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>90</x>
       <y>100</y>
-      <width>301</width>
+      <width>291</width>
       <height>24</height>
      </rect>
     </property>
@@ -338,7 +353,7 @@ border-radius: 10px;</string>
    <widget class="QComboBox" name="gender">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>90</x>
       <y>130</y>
       <width>111</width>
       <height>24</height>
@@ -358,9 +373,9 @@ border-radius: 10px;</string>
    <widget class="QDateEdit" name="dobDate">
     <property name="geometry">
      <rect>
-      <x>79</x>
+      <x>89</x>
       <y>70</y>
-      <width>111</width>
+      <width>101</width>
       <height>25</height>
      </rect>
     </property>
@@ -379,11 +394,17 @@ border-radius: 10px;</string>
   <widget class="QLineEdit" name="idSearch">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>70</y>
-     <width>141</width>
-     <height>24</height>
+     <x>30</x>
+     <y>63</y>
+     <width>151</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid rgb(206, 206, 206);
+border-bottom: 2px solid rgb(85, 0, 127);
+padding: 2px;
+border-radius: 5px;</string>
    </property>
    <property name="placeholderText">
     <string>Student ID</string>
@@ -393,10 +414,15 @@ border-radius: 10px;</string>
    <property name="geometry">
     <rect>
      <x>190</x>
-     <y>70</y>
+     <y>63</y>
      <width>61</width>
-     <height>24</height>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 255, 89, 255), stop:0.648045 rgba(3, 118, 0, 255));
+color: rgb(255, 255, 255);
+border-radius: 5px;</string>
    </property>
    <property name="text">
     <string>Find</string>
@@ -405,21 +431,41 @@ border-radius: 10px;</string>
   <widget class="QPushButton" name="deleteBtn">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>330</x>
      <y>60</y>
-     <width>91</width>
+     <width>101</width>
      <height>31</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: rgb(255, 0, 0);
-color: &quot;white&quot;;</string>
+
+color: rgb(255, 255, 255);
+border-radius: 5px;</string>
    </property>
    <property name="text">
     <string>Delete Student</string>
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>idSearch</tabstop>
+  <tabstop>pushButton_3</tabstop>
+  <tabstop>deleteBtn</tabstop>
+  <tabstop>studentName</tabstop>
+  <tabstop>dobDate</tabstop>
+  <tabstop>ageSpinBox</tabstop>
+  <tabstop>cnicLineEdit</tabstop>
+  <tabstop>gender</tabstop>
+  <tabstop>newClassLineEdit</tabstop>
+  <tabstop>fatherNameLineEdit</tabstop>
+  <tabstop>guardianNameLineEdit</tabstop>
+  <tabstop>guardianCnicLineEdit</tabstop>
+  <tabstop>guardianPhoneNumberLineEdit</tabstop>
+  <tabstop>guardianAddressLineEdit</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>pushButton_2</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

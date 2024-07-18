@@ -13,6 +13,11 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: white;
+font: 10pt &quot;Bahnschrift&quot;;
+color: rgb(0, 0, 0);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QScrollArea" name="scrollArea">
     <property name="geometry">
@@ -50,7 +55,7 @@
    <widget class="QLineEdit" name="teacherId">
     <property name="geometry">
      <rect>
-      <x>1100</x>
+      <x>1090</x>
       <y>30</y>
       <width>141</width>
       <height>31</height>
@@ -69,11 +74,16 @@ padding: 5px;</string>
    <widget class="QPushButton" name="idsearchbtn">
     <property name="geometry">
      <rect>
-      <x>1250</x>
+      <x>1240</x>
       <y>30</y>
       <width>51</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0.291, y1:0.289773, x2:1, y2:1, stop:0 rgba(14, 21, 127, 255), stop:1 rgba(138, 0, 207, 255));
+color: rgb(255, 255, 255);
+border-radius: 5px;</string>
     </property>
     <property name="text">
      <string>Search</string>
@@ -87,6 +97,11 @@ padding: 5px;</string>
       <width>51</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0.291, y1:0.289773, x2:1, y2:1, stop:0 rgba(14, 21, 127, 255), stop:1 rgba(138, 0, 207, 255));
+color: rgb(255, 255, 255);
+border-radius: 5px;</string>
     </property>
     <property name="text">
      <string>Search</string>
@@ -195,7 +210,7 @@ padding: 5px;</string>
       </rect>
      </property>
      <property name="text">
-      <string>Name</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="pt_age">
@@ -208,7 +223,7 @@ padding: 5px;</string>
       </rect>
      </property>
      <property name="text">
-      <string>Age</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="pt_dob">
@@ -221,7 +236,7 @@ padding: 5px;</string>
       </rect>
      </property>
      <property name="text">
-      <string>Date of Birth</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="pt_cnic">
@@ -234,7 +249,7 @@ padding: 5px;</string>
       </rect>
      </property>
      <property name="text">
-      <string>CNIC</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="pt_gender">
@@ -247,7 +262,7 @@ padding: 5px;</string>
       </rect>
      </property>
      <property name="text">
-      <string>Gender</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="label_17">
@@ -273,7 +288,7 @@ padding: 5px;</string>
       </rect>
      </property>
      <property name="text">
-      <string>Qualification</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="pt_department">
@@ -286,7 +301,7 @@ padding: 5px;</string>
       </rect>
      </property>
      <property name="text">
-      <string>Department</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="label_18">
@@ -325,7 +340,7 @@ padding: 5px;</string>
       </rect>
      </property>
      <property name="text">
-      <string>Designation</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="pt_joinindate">
@@ -338,7 +353,7 @@ padding: 5px;</string>
       </rect>
      </property>
      <property name="text">
-      <string>Dateofjoining</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="label_20">
@@ -364,7 +379,7 @@ padding: 5px;</string>
       </rect>
      </property>
      <property name="text">
-      <string>Salary</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="label_21">
@@ -390,7 +405,7 @@ padding: 5px;</string>
       </rect>
      </property>
      <property name="text">
-      <string>Phone</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="label_22">
@@ -416,7 +431,7 @@ padding: 5px;</string>
       </rect>
      </property>
      <property name="text">
-      <string>Email</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="label_23">
@@ -442,7 +457,7 @@ padding: 5px;</string>
       </rect>
      </property>
      <property name="text">
-      <string>Address</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="label_24">
@@ -483,16 +498,20 @@ padding: 5px;</string>
      <rect>
       <x>900</x>
       <y>30</y>
-      <width>221</width>
+      <width>181</width>
       <height>32</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Leelawadee</family>
-      <pointsize>16</pointsize>
+      <family>Tw Cen MT</family>
+      <pointsize>18</pointsize>
+      <italic>false</italic>
       <bold>true</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 700 18pt &quot;Tw Cen MT&quot;;</string>
     </property>
     <property name="text">
      <string>Teacher Profile</string>
@@ -509,10 +528,14 @@ padding: 5px;</string>
     </property>
     <property name="font">
      <font>
-      <family>Leelawadee</family>
+      <family>Tw Cen MT</family>
       <pointsize>20</pointsize>
+      <italic>false</italic>
       <bold>true</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 700 20pt &quot;Tw Cen MT&quot;;</string>
     </property>
     <property name="text">
      <string>All Teachers</string>

@@ -13,6 +13,11 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: white;
+font: 10pt &quot;Bahnschrift&quot;;
+color: rgb(0, 0, 0);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
     <property name="geometry">
@@ -25,9 +30,14 @@
     </property>
     <property name="font">
      <font>
+      <family>Tw Cen MT</family>
       <pointsize>18</pointsize>
+      <italic>false</italic>
       <bold>true</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 700 18pt &quot;Tw Cen MT&quot;;</string>
     </property>
     <property name="text">
      <string>Add New Student</string>
@@ -83,7 +93,7 @@
        <x>10</x>
        <y>100</y>
        <width>81</width>
-       <height>16</height>
+       <height>21</height>
       </rect>
      </property>
      <property name="text">
@@ -99,7 +109,7 @@
        <x>220</x>
        <y>70</y>
        <width>49</width>
-       <height>16</height>
+       <height>21</height>
       </rect>
      </property>
      <property name="text">
@@ -112,7 +122,7 @@
        <x>10</x>
        <y>130</y>
        <width>81</width>
-       <height>16</height>
+       <height>21</height>
       </rect>
      </property>
      <property name="text">
@@ -128,7 +138,7 @@
        <x>10</x>
        <y>160</y>
        <width>81</width>
-       <height>16</height>
+       <height>21</height>
       </rect>
      </property>
      <property name="text">
@@ -144,7 +154,7 @@
        <x>210</x>
        <y>160</y>
        <width>81</width>
-       <height>16</height>
+       <height>21</height>
       </rect>
      </property>
      <property name="text">
@@ -157,9 +167,9 @@
     <widget class="QLineEdit" name="studentName">
      <property name="geometry">
       <rect>
-       <x>80</x>
+       <x>100</x>
        <y>40</y>
-       <width>301</width>
+       <width>281</width>
        <height>24</height>
       </rect>
      </property>
@@ -167,9 +177,9 @@
     <widget class="QLineEdit" name="cnicLineEdit">
      <property name="geometry">
       <rect>
-       <x>80</x>
+       <x>100</x>
        <y>100</y>
-       <width>301</width>
+       <width>281</width>
        <height>24</height>
       </rect>
      </property>
@@ -177,9 +187,9 @@
     <widget class="QLineEdit" name="previousClassLineEdit">
      <property name="geometry">
       <rect>
-       <x>80</x>
+       <x>102</x>
        <y>160</y>
-       <width>113</width>
+       <width>101</width>
        <height>24</height>
       </rect>
      </property>
@@ -187,9 +197,9 @@
     <widget class="QLineEdit" name="newClassLineEdit">
      <property name="geometry">
       <rect>
-       <x>270</x>
+       <x>282</x>
        <y>160</y>
-       <width>113</width>
+       <width>101</width>
        <height>24</height>
       </rect>
      </property>
@@ -197,7 +207,7 @@
     <widget class="QComboBox" name="gender">
      <property name="geometry">
       <rect>
-       <x>80</x>
+       <x>100</x>
        <y>130</y>
        <width>111</width>
        <height>24</height>
@@ -217,9 +227,9 @@
     <widget class="QDateEdit" name="dobDate">
      <property name="geometry">
       <rect>
-       <x>79</x>
+       <x>99</x>
        <y>70</y>
-       <width>111</width>
+       <width>91</width>
        <height>25</height>
       </rect>
      </property>
@@ -227,9 +237,9 @@
     <widget class="QSpinBox" name="ageSpinBox">
      <property name="geometry">
       <rect>
-       <x>250</x>
+       <x>270</x>
        <y>70</y>
-       <width>131</width>
+       <width>111</width>
        <height>25</height>
       </rect>
      </property>
@@ -253,7 +263,7 @@
        <x>10</x>
        <y>40</y>
        <width>91</width>
-       <height>16</height>
+       <height>21</height>
       </rect>
      </property>
      <property name="text">
@@ -269,7 +279,7 @@
        <x>10</x>
        <y>70</y>
        <width>91</width>
-       <height>16</height>
+       <height>21</height>
       </rect>
      </property>
      <property name="text">
@@ -282,7 +292,7 @@
        <x>10</x>
        <y>100</y>
        <width>81</width>
-       <height>16</height>
+       <height>21</height>
       </rect>
      </property>
      <property name="text">
@@ -305,9 +315,9 @@
     <widget class="QLineEdit" name="guardianCnicLineEdit">
      <property name="geometry">
       <rect>
-       <x>80</x>
+       <x>100</x>
        <y>100</y>
-       <width>301</width>
+       <width>281</width>
        <height>24</height>
       </rect>
      </property>
@@ -315,9 +325,9 @@
     <widget class="QLineEdit" name="guardianPhoneNumberLineEdit">
      <property name="geometry">
       <rect>
-       <x>80</x>
+       <x>100</x>
        <y>130</y>
-       <width>301</width>
+       <width>281</width>
        <height>24</height>
       </rect>
      </property>
@@ -328,7 +338,7 @@
        <x>10</x>
        <y>130</y>
        <width>81</width>
-       <height>16</height>
+       <height>21</height>
       </rect>
      </property>
      <property name="text">
@@ -381,6 +391,11 @@
       <height>31</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0.291, y1:0.289773, x2:1, y2:1, stop:0 rgba(14, 21, 127, 255), stop:1 rgba(138, 0, 207, 255));
+color: rgb(255, 255, 255);
+border-radius: 5px;</string>
+    </property>
     <property name="text">
      <string>Admit Now</string>
     </property>
@@ -397,7 +412,7 @@
     <property name="styleSheet">
      <string notr="true">background-color: rgb(255, 0, 0);
 color: rgb(255, 255, 255);
-border-radius: 10px;</string>
+border-radius: 5px;</string>
     </property>
     <property name="text">
      <string>Cancel</string>
@@ -409,11 +424,13 @@ border-radius: 10px;</string>
  <tabstops>
   <tabstop>studentName</tabstop>
   <tabstop>dobDate</tabstop>
+  <tabstop>ageSpinBox</tabstop>
   <tabstop>cnicLineEdit</tabstop>
   <tabstop>gender</tabstop>
   <tabstop>previousClassLineEdit</tabstop>
   <tabstop>newClassLineEdit</tabstop>
   <tabstop>fatherNameLineEdit</tabstop>
+  <tabstop>guardianNameLineEdit</tabstop>
   <tabstop>guardianCnicLineEdit</tabstop>
   <tabstop>guardianPhoneNumberLineEdit</tabstop>
   <tabstop>guardianAddressLineEdit</tabstop>
