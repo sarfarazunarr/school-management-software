@@ -14,7 +14,8 @@ class Updateteacher : public QMainWindow
 public:
     explicit Updateteacher(QWidget *parent = nullptr);
     ~Updateteacher();
-
+signals:
+    void updateData();
 private slots:
     void on_pushButton_3_clicked();
 

@@ -542,7 +542,8 @@ padding: 5px;</string>
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset theme="document-new"/>
+    <iconset resource="assets.qrc">
+     <normaloff>:/new/images/C:/Users/Administrator/Downloads/square-plus.png</normaloff>:/new/images/C:/Users/Administrator/Downloads/square-plus.png</iconset>
    </property>
    <property name="text">
     <string>New Student</string>
@@ -561,6 +562,10 @@ padding: 5px;</string>
    <property name="checkable">
     <bool>true</bool>
    </property>
+   <property name="icon">
+    <iconset resource="assets.qrc">
+     <normaloff>:/new/images/C:/Users/Administrator/Downloads/pen-square.png</normaloff>:/new/images/C:/Users/Administrator/Downloads/pen-square.png</iconset>
+   </property>
    <property name="text">
     <string>Update Student</string>
    </property>
@@ -578,6 +583,10 @@ padding: 5px;</string>
    <property name="checkable">
     <bool>true</bool>
    </property>
+   <property name="icon">
+    <iconset resource="assets.qrc">
+     <normaloff>:/new/images/C:/Users/Administrator/Downloads/trash.png</normaloff>:/new/images/C:/Users/Administrator/Downloads/trash.png</iconset>
+   </property>
    <property name="text">
     <string>deleteStudent</string>
    </property>
@@ -592,6 +601,8 @@ padding: 5px;</string>
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="assets.qrc"/>
+ </resources>
  <connections/>
 </ui>

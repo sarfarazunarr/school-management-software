@@ -15,6 +15,9 @@ public:
     explicit NewStudent(QWidget *parent = nullptr);
     ~NewStudent();
 
+signals:
+    void studentAdded();
+
 private slots:
     void on_pushButton_clicked();
 

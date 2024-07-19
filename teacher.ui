@@ -560,6 +560,10 @@ padding: 5px;</string>
    <property name="checkable">
     <bool>true</bool>
    </property>
+   <property name="icon">
+    <iconset resource="assets.qrc">
+     <normaloff>:/new/images/C:/Users/Administrator/Downloads/square-plus.png</normaloff>:/new/images/C:/Users/Administrator/Downloads/square-plus.png</iconset>
+   </property>
    <property name="text">
     <string>newteacher</string>
    </property>
@@ -574,6 +578,10 @@ padding: 5px;</string>
    </property>
   </action>
   <action name="actionupdateteacher">
+   <property name="icon">
+    <iconset resource="assets.qrc">
+     <normaloff>:/new/images/C:/Users/Administrator/Downloads/pen-square.png</normaloff>:/new/images/C:/Users/Administrator/Downloads/pen-square.png</iconset>
+   </property>
    <property name="text">
     <string>updateTeacher</string>
    </property>
@@ -588,6 +596,8 @@ padding: 5px;</string>
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="assets.qrc"/>
+ </resources>
  <connections/>
 </ui>

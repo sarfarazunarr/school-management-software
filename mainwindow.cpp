@@ -7,16 +7,29 @@
 #include <QDate>
 #include <QDesktopServices>
 #include <QProcess>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QSqlError>
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
     setWindowTitle("Apna School - Manage your school now!");
     QDate currentDate = QDate::currentDate();
     QString date = currentDate.toString();
     ui->today->setText(date);
+
+    QSqlDatabase db = QSqlDatabase::database();
+    if (!db.isOpen()) {
+        qDebug() << "Error: Database is not open.";
+        return;
+    } else {
+       updateData();
+    }
 }
 
 MainWindow::~MainWindow()
@@ -24,9 +37,26 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::updateData()
+{
+    QSqlQuery query("SELECT COUNT(*) AS num_students FROM students");
+    query.exec(); // Execute the query
+    if (query.next()) {
+        int numStudents = query.value("num_students").toInt();
+        ui->numberofstudents->setText(QString::number(numStudents));
+    }
+
+    QSqlQuery query2("SELECT COUNT(*) AS num_teachers FROM teachers");
+    query2.exec(); // Execute the second query
+    if (query2.next()) {
+        int numTeachers = query2.value("num_teachers").toInt();
+        ui->numberofteachers->setText(QString::number(numTeachers));
+    }
+}
 void MainWindow::on_pushButton_2_clicked()
 {
     Student* st = new Student(this);
+    connect(st, &Student::dataUpdated, this, &MainWindow::updateData);
     st->show();
 }
 
@@ -34,6 +64,7 @@ void MainWindow::on_pushButton_2_clicked()
 void MainWindow::on_pushButton_3_clicked()
 {
     Teacher* nt = new Teacher(this);
+    connect(nt, &Teacher::dataUpdated, this, &MainWindow::updateData);
     nt->show();
 }
 

@@ -12,6 +12,7 @@
 #include <random>
 #include <algorithm>
 #include <QSqlTableModel>
+#include <QDesktopServices>
 
 exam::exam(QWidget *parent)
     : QMainWindow(parent)
@@ -133,6 +134,15 @@ void exam::on_generateList_clicked()
     ui->generateList->setText("Generated");
     QString currentDir = QDir::currentPath();
     qDebug() << "Current directory: " << currentDir << "/block_list.pdf";
+
+    // Ensure the path is correctly formatted as a file URL
+    QString mainpath = "file:///" + currentDir + "/block_list.pdf";
+    mainpath.replace(" ", "%20"); // Replace spaces with %20
+
+    qDebug() << "Formatted path: " << mainpath;
+
+    QDesktopServices::openUrl(QUrl(mainpath));
+
 }
 
 void exam::on_check_clicked()
@@ -220,6 +230,17 @@ void exam::on_pushButton_2_clicked()
         }}
 
     ui->pushButton_2->setText("Generated");
+    QString currentDir = QDir::currentPath();
+    qDebug() << "Current directory: " << currentDir << "/student_slip.pdf";
+
+    // Ensure the path is correctly formatted as a file URL
+    QString mainpath = "file:///" + currentDir + "/student_slip.pdf";
+    mainpath.replace(" ", "%20"); // Replace spaces with %20
+
+    qDebug() << "Formatted path: " << mainpath;
+
+    QDesktopServices::openUrl(QUrl(mainpath));
+
     painter.end();
 }
 

@@ -14,6 +14,10 @@ class Teacher : public QMainWindow
 public:
     explicit Teacher(QWidget *parent = nullptr);
     ~Teacher();
+signals:
+    void dataUpdated();
+public slots:
+    void updateTeacher();
 
 private slots:
     void on_idsearchbtn_clicked();

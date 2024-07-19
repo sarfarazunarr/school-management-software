@@ -14,6 +14,10 @@ class Student : public QMainWindow
 public:
     explicit Student(QWidget *parent = nullptr);
     ~Student();
+signals:
+    void dataUpdated();
+public slots:
+    void updateStudentData();
 
 private slots:
     void on_actionNew_Student_triggered();

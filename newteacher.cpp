@@ -68,6 +68,7 @@ void Newteacher::on_pushButton_clicked()
         qDebug() << "Error: Could not insert data." << query.lastError();
     } else {
         QMessageBox::information(this, "Success", "New Teacher Added!");
+        emit teacherAdded();
     }
 }
 

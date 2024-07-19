@@ -67,6 +67,7 @@ void Updateteacher::on_deleteBtn_clicked()
 
             if (query.exec()) {
                 QMessageBox::information(this, "Success", "Teacher deleted successfully");
+                emit updateData();
                 // Clear fields
                 ui->teacherName->clear();
                 ui->dobDate->setDate(QDate::currentDate());
@@ -131,6 +132,7 @@ void Updateteacher::on_pushButton_clicked()
             qDebug() << "Error: Could not update data." << query.lastError();
         } else {
             QMessageBox::information(this, "Success", "Data Updated Successfully!");
+            emit updateData();
         }
 }
 

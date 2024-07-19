@@ -14,18 +14,10 @@ Student::Student(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Student)
 {
-    QSqlQuery query;
-    if (!query.exec("CREATE TABLE IF NOT EXISTS students (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, date_of_birth DATE NOT NULL, age INTEGER NOT NULL, cnic TEXT UNIQUE NOT NULL, gender TEXT NOT NULL CHECK (gender IN ('Male', 'Female', 'Other')), previous_class TEXT, new_class TEXT, guardian_name TEXT,  father_name TEXT, guardian_cnic TEXT, guardian_phone_number TEXT, guardian_address TEXT, date_of_registration DATE NOT NULL DEFAULT CURRENT_DATE)")) {
-        qDebug() << "Error: Could not create table." << query.lastError();
-    }
     ui->setupUi(this);
-    QSqlTableModel *model = new QSqlTableModel();
-    QTableView *view = new QTableView();
-    model->setTable("students");
-    model->select();
-    ui->StudentDataTable->setModel(model);
-    ui->StudentDataTable->resizeColumnsToContents();
-    ui->StudentDataTable->show();
+
+    // Setup the student data table
+    updateStudentData();
 
     // Connect the selectionChanged signal to a slot
     connect(ui->StudentDataTable->selectionModel(), &QItemSelectionModel::selectionChanged,
@@ -44,6 +36,9 @@ Student::~Student()
 void Student::on_actionNew_Student_triggered()
 {
     NewStudent* ns = new NewStudent(this);
+
+    // Connect the signal from NewStudent to the slot in Student
+    connect(ns, &NewStudent::studentAdded, this, &Student::updateStudentData);
     ns->show();
 }
 
@@ -78,42 +73,53 @@ void Student::on_idsearchbtn_clicked()
     }
 }
 
-
 void Student::on_actionUpdate_Student_triggered()
 {
     UpdateStudent* update = new UpdateStudent(this);
+    connect(update, &UpdateStudent::studentupdated, this, &Student::updateStudentData);
     update->show();
 }
-
 
 void Student::on_actiondeleteStudent_triggered()
 {
     UpdateStudent* update = new UpdateStudent(this);
+    connect(update, &UpdateStudent::studentupdated, this, &Student::updateStudentData);
     update->show();
 }
 
-
 void Student::on_studentSearchbtn_clicked()
 {
-    // QString searchQuery = ui->studentSearch->text();
-    // QSqlQuery query;
+    QString searchQuery = ui->studentSearch->text();
+    QSqlQuery query;
 
-    // // Prepare the search query
-    // query.prepare("SELECT * FROM students WHERE id = :id OR name LIKE :searchQuery OR cnic LIKE :searchQuery");
+    // Prepare the search query
+    query.prepare("SELECT * FROM students WHERE id = :id OR name LIKE :searchQuery OR cnic LIKE :searchQuery");
 
-    // // Bind the values
-    // query.bindValue(":id", searchQuery.toInt());
-    // query.bindValue(":searchQuery", "%" + searchQuery + "%");
+    // Bind the values
+    query.bindValue(":id", searchQuery.toInt());
+    query.bindValue(":searchQuery", "%" + searchQuery + "%");
 
-    // // Execute the query
-    // if (query.exec()) {
-    //     // Update the studentModel
-    //     studentModel->setQuery(query);
-    //     ui->StudentDataTable->setModel(studentModel);
-    //     ui->StudentDataTable->resizeColumnsToContents();
-    // } else {
-    //     QMessageBox::critical(this, "Error", query.lastError().text());
-    // }
-    QMessageBox::critical(this, "Unavailable", "Currently in development mode");
+    // Execute the query
+    if (query.exec()) {
+        // Create a model and set it up with the query
+        QSqlQueryModel *model = new QSqlQueryModel();
+        model->setQuery(query);
+
+        // Update the view with the new model
+        ui->StudentDataTable->setModel(model);
+        ui->StudentDataTable->resizeColumnsToContents();
+    } else {
+        QMessageBox::critical(this, "Error", query.lastError().text());
+    }
+}
+
+void Student::updateStudentData()
+{
+    QSqlTableModel *model = new QSqlTableModel();
+    model->setTable("students");
+    model->select();
+    ui->StudentDataTable->setModel(model);
+    ui->StudentDataTable->resizeColumnsToContents();
+    emit dataUpdated();
 }
 

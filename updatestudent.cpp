@@ -74,6 +74,7 @@ void UpdateStudent::on_deleteBtn_clicked()
             ui->guardianCnicLineEdit->clear();
             ui->guardianPhoneNumberLineEdit->clear();
             ui->guardianAddressLineEdit->clear();
+            emit studentupdated();
         } else {
             QMessageBox::critical(this, "Error", query.lastError().text());
         }
@@ -119,6 +120,7 @@ void UpdateStudent::on_pushButton_clicked()
 
     // Execute the query
     if (query.exec()) {
+        emit studentupdated();
         QMessageBox::information(this, "Success", "Student updated successfully");
     } else {
         QMessageBox::critical(this, "Error", query.lastError().text());

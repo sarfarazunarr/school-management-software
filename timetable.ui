@@ -141,23 +141,21 @@ font: 700 12pt &quot;Bahnschrift&quot;;</string>
      <height>21</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuView_timetable_of">
+   <widget class="QMenu" name="menuAdd_Data">
     <property name="title">
-     <string>View timetable of</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menuActions">
-    <property name="title">
-     <string>Actions</string>
+     <string>Add Data</string>
     </property>
     <addaction name="actionaddData"/>
    </widget>
-   <addaction name="menuView_timetable_of"/>
-   <addaction name="menuActions"/>
+   <addaction name="menuAdd_Data"/>
   </widget>
   <action name="actionaddData">
    <property name="checkable">
     <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="assets.qrc">
+     <normaloff>:/new/images/C:/Users/Administrator/Downloads/square-plus.png</normaloff>:/new/images/C:/Users/Administrator/Downloads/square-plus.png</iconset>
    </property>
    <property name="text">
     <string>addData</string>
@@ -173,6 +171,8 @@ font: 700 12pt &quot;Bahnschrift&quot;;</string>
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="assets.qrc"/>
+ </resources>
  <connections/>
 </ui>

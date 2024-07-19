@@ -15,7 +15,6 @@ SOURCES += \
     newstudent.cpp \
     newteacher.cpp \
     newtimetable.cpp \
-    staff.cpp \
     student.cpp \
     teacher.cpp \
     timetable.cpp \
@@ -28,7 +27,6 @@ HEADERS += \
     newstudent.h \
     newteacher.h \
     newtimetable.h \
-    staff.h \
     student.h \
     teacher.h \
     timetable.h \
@@ -41,7 +39,6 @@ FORMS += \
     newstudent.ui \
     newteacher.ui \
     newtimetable.ui \
-    staff.ui \
     student.ui \
     teacher.ui \
     timetable.ui \

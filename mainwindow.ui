@@ -419,13 +419,12 @@ border-radius: 5px;</string>
     <property name="styleSheet">
      <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(157, 0, 255, 255), stop:1 rgba(255, 0, 0, 255));
 padding: 5px;
-border-radius: 10px;
-font: 700 45pt &quot;Tw Cen MT&quot;;</string>
+border-radius: 10px;</string>
     </property>
-    <widget class="QLabel" name="label_13">
+    <widget class="QLabel" name="numberofstudents">
      <property name="geometry">
       <rect>
-       <x>60</x>
+       <x>130</x>
        <y>30</y>
        <width>91</width>
        <height>51</height>
@@ -433,16 +432,17 @@ font: 700 45pt &quot;Tw Cen MT&quot;;</string>
      </property>
      <property name="styleSheet">
       <string notr="true">color: rgb(255, 255, 255);
-background-color: transparent;</string>
+background-color: transparent;
+font: 700 45pt &quot;Tw Cen MT&quot;;</string>
      </property>
      <property name="text">
-      <string>15</string>
+      <string>0</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_12">
      <property name="geometry">
       <rect>
-       <x>60</x>
+       <x>120</x>
        <y>80</y>
        <width>131</width>
        <height>31</height>
@@ -455,6 +455,28 @@ color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string>Students are Enrolled</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_13">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>131</width>
+       <height>161</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: transparent;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="assets.qrc">:/new/images/C:/Users/Administrator/Downloads/student.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
      </property>
     </widget>
    </widget>
@@ -476,7 +498,7 @@ font: 700 45pt &quot;Tw Cen MT&quot;;</string>
     <widget class="QLabel" name="label_15">
      <property name="geometry">
       <rect>
-       <x>80</x>
+       <x>10</x>
        <y>80</y>
        <width>111</width>
        <height>31</height>
@@ -491,12 +513,12 @@ color: rgb(255, 255, 255);</string>
       <string>Staff is registered</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_14">
+    <widget class="QLabel" name="numberofteachers">
      <property name="geometry">
       <rect>
-       <x>70</x>
+       <x>20</x>
        <y>30</y>
-       <width>91</width>
+       <width>81</width>
        <height>51</height>
       </rect>
      </property>
@@ -505,7 +527,29 @@ color: rgb(255, 255, 255);</string>
 background-color: transparent;</string>
      </property>
      <property name="text">
-      <string>15</string>
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_14">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>0</y>
+       <width>131</width>
+       <height>171</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: transparent;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="assets.qrc">:/new/images/C:/Users/Administrator/Downloads/teacher.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
      </property>
     </widget>
    </widget>
@@ -578,6 +622,28 @@ border-radius: 5px;</string>
       <string>Open Portal</string>
      </property>
     </widget>
+    <widget class="QLabel" name="label_16">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>-40</y>
+       <width>181</width>
+       <height>191</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: transparent;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="assets.qrc">:/new/images/C:/Users/Administrator/Downloads/attendance.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
@@ -592,6 +658,8 @@ border-radius: 5px;</string>
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="assets.qrc"/>
+ </resources>
  <connections/>
 </ui>

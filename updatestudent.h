@@ -15,6 +15,10 @@ public:
     explicit UpdateStudent(QWidget *parent = nullptr);
     ~UpdateStudent();
 
+signals:
+    void studentupdated();
+
+
 private slots:
     void on_pushButton_3_clicked();
 
