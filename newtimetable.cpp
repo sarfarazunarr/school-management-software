@@ -11,6 +11,8 @@ Newtimetable::Newtimetable(QWidget *parent)
     , ui(new Ui::Newtimetable)
 {
     ui->setupUi(this);
+    setWindowTitle("New Timetable - Apna School");
+    setWindowIcon(QIcon(":/new/images/C:/Users/Administrator/Downloads/school.png"));
 }
 
 Newtimetable::~Newtimetable()
@@ -56,6 +58,7 @@ void Newtimetable::on_pushButton_clicked()
         QMessageBox::information(this, "Error", "Error Occured");
     } else {
         qDebug() << "Data inserted successfully!";
+        emit updateTimeTable();
         QMessageBox::information(this, "Success", "Data Inserted Successfully!");
         this->close();
     }

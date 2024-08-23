@@ -13,6 +13,8 @@ Newteacher::Newteacher(QWidget *parent)
     , ui(new Ui::Newteacher)
 {
     ui->setupUi(this);
+    setWindowTitle("New Teacher - Apna School");
+    setWindowIcon(QIcon(":/new/images/C:/Users/Administrator/Downloads/school.png"));
 }
 
 Newteacher::~Newteacher()

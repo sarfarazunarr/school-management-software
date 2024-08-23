@@ -19,6 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     setWindowTitle("Apna School - Manage your school now!");
+    setWindowIcon(QIcon(":/new/images/C:/Users/Administrator/Downloads/school.png"));
     QDate currentDate = QDate::currentDate();
     QString date = currentDate.toString();
     ui->today->setText(date);
@@ -91,7 +92,7 @@ void MainWindow::on_pushButton_6_clicked()
 
 void MainWindow::on_pushButton_7_clicked()
 {
-    QDesktopServices::openUrl(QUrl("E://apnaschool//apnacopier.exe"));
+    QDesktopServices::openUrl(QUrl("apnacopier.exe"));
 }
 
 
@@ -105,5 +106,11 @@ void MainWindow::on_pushButton_9_clicked()
 void MainWindow::on_pushButton_10_clicked()
 {
     QDesktopServices::openUrl(QUrl("http://localhost:5173/"));
+}
+
+
+void MainWindow::on_pushButton_11_clicked()
+{
+    QDesktopServices::openUrl(QUrl("AIWriter.exe"));
 }
 

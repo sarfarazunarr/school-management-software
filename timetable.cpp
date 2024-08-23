@@ -8,13 +8,15 @@
 #include <QStandardItemModel>
 #include <QStandardItem>
 #include "newtimetable.h"
+#include <QMessageBox>
 
 Timetable::Timetable(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Timetable)
 {
     ui->setupUi(this);
-
+    setWindowTitle("Timetable - Apna School");
+    setWindowIcon(QIcon(":/new/images/C:/Users/Administrator/Downloads/school.png"));
     // Database connection and table creation
     QSqlDatabase db = QSqlDatabase::database();
     if (!db.isOpen()) {
@@ -27,9 +29,25 @@ Timetable::Timetable(QWidget *parent)
         qDebug() << "Error: Could not create table." << query.lastError();
     } else {
         qDebug() << "TimeTable database is ready!";
+        getNewData();
     }
 
-    qDebug() << "Passed Timetable";
+}
+
+Timetable::~Timetable()
+{
+    delete ui;
+}
+
+void Timetable::on_actionaddData_triggered()
+{
+    Newtimetable* nt = new Newtimetable(this);
+    connect(nt, &Newtimetable::updateTimeTable, this, &Timetable::getNewData);
+    nt->show();
+}
+
+void Timetable::getNewData()
+{
     // Get the current day
     QDate currentDate = QDate::currentDate();
     QString dayString = currentDate.toString("dddd");
@@ -38,9 +56,10 @@ Timetable::Timetable(QWidget *parent)
     // Set up the model
     QStandardItemModel *model = new QStandardItemModel();
 
+    QSqlQuery query;
     // Fetch data for the current day
     query.prepare("SELECT class, period, subject, teacher FROM timetable WHERE day = :day");
-    query.bindValue(":day", "tuesday");
+    query.bindValue(":day", dayString);
     if (!query.exec()) {
         qDebug() << "Error: Could not retrieve timetable data." << query.lastError();
     } else {
@@ -76,18 +95,6 @@ Timetable::Timetable(QWidget *parent)
     ui->timetabledata->setModel(model);
     ui->timetabledata->resizeColumnsToContents();
 }
-
-Timetable::~Timetable()
-{
-    delete ui;
-}
-
-void Timetable::on_actionaddData_triggered()
-{
-    Newtimetable* nt = new Newtimetable(this);
-    nt->show();
-}
-
 
 void Timetable::on_Daysname_currentTextChanged(const QString &arg1)
 {

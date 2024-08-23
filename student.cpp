@@ -15,7 +15,8 @@ Student::Student(QWidget *parent)
     , ui(new Ui::Student)
 {
     ui->setupUi(this);
-
+    setWindowTitle("Students - Apna School");
+    setWindowIcon(QIcon(":/new/images/C:/Users/Administrator/Downloads/school.png"));
     // Setup the student data table
     updateStudentData();
 

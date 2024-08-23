@@ -13,12 +13,26 @@
 #include <algorithm>
 #include <QSqlTableModel>
 #include <QDesktopServices>
+#include <QStandardPaths>
+
 
 exam::exam(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::exam)
 {
     ui->setupUi(this);
+
+    setWindowTitle("Exam Management - Apna School");
+    setWindowIcon(QIcon(":/new/images/C:/Users/Administrator/Downloads/school.png"));
+
+    QSqlTableModel *model = new QSqlTableModel();
+    ui->Teachers->setModel(model);
+    QTableView *view = new QTableView();
+    model->setTable("teachersBlock");
+    model->select();
+    ui->Teachers->setModel(model);
+    ui->Teachers->resizeColumnsToContents();
+    ui->Teachers->show();
 }
 
 exam::~exam()
@@ -45,12 +59,6 @@ void exam::on_generateList_clicked()
     QString studentClass = ui->stclass->text();
     QString assignType = ui->type->currentText();
 
-    // Debug output
-    qDebug() << "Block Name:" << blockName;
-    qDebug() << "Number of Students:" << numofstudents;
-    qDebug() << "Student Class:" << studentClass;
-    qDebug() << "Assignment Type:" << assignType;
-
     // Create a new table for blocks
     QSqlQuery query;
     if (!query.exec("CREATE TABLE IF NOT EXISTS blocks (blockName TEXT, numofstudents INTEGER, studentIDs TEXT)")) {
@@ -58,7 +66,18 @@ void exam::on_generateList_clicked()
         return;
     }
 
-    // Find all students in the specified class (or all students if class is empty)
+    query.prepare("SELECT COUNT(*) FROM blocks WHERE blockName = :blockName");
+    query.bindValue(":blockName", blockName);
+    if (!query.exec()) {
+        qDebug() << "Failed to check block existence:" << query.lastError();
+        return;
+    }
+    if (query.next() && query.value(0).toInt() > 0) {
+        QMessageBox::warning(this, "Block Exists", "Block " + blockName + " already exists.");
+        return;
+    }
+
+    // Find all students in the specified class
     query.prepare("SELECT id FROM students WHERE (:class IS NULL OR new_class = :class)");
     query.bindValue(":class", studentClass.isEmpty() ? QVariant(QVariant::String) : QVariant(studentClass));
     if (!query.exec()) {
@@ -72,25 +91,32 @@ void exam::on_generateList_clicked()
         studentIDs.append(query.value("id").toInt());
     }
 
-    // Debug output
-    qDebug() << "Student IDs:" << studentIDs;
+    // Remove students already assigned to other blocks
+    query.prepare("SELECT studentIDs FROM blocks");
+    if (query.exec()) {
+        while (query.next()) {
+            QStringList assignedStudents = query.value("studentIDs").toString().split(",");
+            for (const QString &assignedID : assignedStudents) {
+                studentIDs.removeAll(assignedID.toInt());
+            }
+        }
+    }
 
-    // Randomize the student IDs based on the assignment type
-    if (assignType == "Serialize") {
-        // Serialize: list of students in series
-        // (no need to shuffle the list)
-    } else if (assignType == "Random") {
-        // Random: randomize the list of student IDs
+    // Check if there are enough students
+    if (studentIDs.size() < numofstudents) {
+        QMessageBox::warning(this, "Not Enough Students", "There are not enough students available to create this block.");
+        return;
+    }
+
+    // Randomize or serialize the student IDs based on the assignment type
+    if (assignType == "Random") {
         std::random_device rd;
         std::mt19937 g(rd());
         std::shuffle(studentIDs.begin(), studentIDs.end(), g);
     }
 
-    // Select the top N student IDs (where N is the number of students)
+    // Select the top N student IDs
     studentIDs = studentIDs.mid(0, numofstudents);
-
-    // Debug output
-    qDebug() << "Selected Student IDs:" << studentIDs;
 
     // Convert QList<int> to a comma-separated QString
     QStringList studentIDStrings;
@@ -109,40 +135,41 @@ void exam::on_generateList_clicked()
         return;
     }
 
-    // Setup the printer for PDF generation
+    // Determine the user's Documents directory and create Blocks folder if it doesn't exist
+    QString documentsDir = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
+    QString blocksDir = documentsDir + "/Blocks";
+
+    QDir dir;
+    if (!dir.exists(blocksDir)) {
+        dir.mkpath(blocksDir);  // Create Blocks directory
+    }
+
+    // Save the PDF in the Blocks folder
+    QString pdfFilePath = blocksDir + "/block" + blockName + ".pdf";
+
     QPrinter printer(QPrinter::HighResolution);
     printer.setOutputFormat(QPrinter::PdfFormat);
-    printer.setOutputFileName("block " + blockName + " .pdf");
+    printer.setOutputFileName(pdfFilePath);
 
     QPainter painter(&printer);
     painter.setFont(QFont("Helvetica", 12));
-
-    // Draw the block name
     painter.drawText(300, 90, "Block" + blockName);
 
-    // Draw the list of students
     int y = 500;
     foreach (int studentID, studentIDs) {
         QString studentName = getStudentName(studentID);
-        // Debug output
-        qDebug() << "Student ID:" << studentID << "Student Name:" << studentName;
-        painter.drawText(10, y, studentName);
-        y += 200;  // Increment y-coordinate for each new student name
+        painter.drawText(10, y, QString::number(studentID));
+        painter.drawText(200, y, studentName);
+        y += 200;
     }
 
     painter.end();
     ui->generateList->setText("Generated");
-    QString currentDir = QDir::currentPath();
-    qDebug() << "Current directory: " << currentDir << "/block_list.pdf";
 
-    // Ensure the path is correctly formatted as a file URL
-    QString mainpath = "file:///" + currentDir + "/block_list.pdf";
-    mainpath.replace(" ", "%20"); // Replace spaces with %20
-
-    qDebug() << "Formatted path: " << mainpath;
-
+    // Open the PDF file
+    QString mainpath = "file:///" + pdfFilePath;
+    mainpath.replace(" ", "%20");
     QDesktopServices::openUrl(QUrl(mainpath));
-
 }
 
 void exam::on_check_clicked()
@@ -150,100 +177,110 @@ void exam::on_check_clicked()
     QString blockName = ui->blockName2->text();
     QString id = ui->stdId_3->text();
 
-    // Prepare the query to check if the student ID is in the specified block
+    if (blockName.isEmpty() || id.isEmpty()) {
+        ui->checkStatus->setText("Block name or Student ID cannot be empty.");
+        return;
+    }
+
     QSqlQuery query;
     query.prepare("SELECT studentIDs FROM blocks WHERE blockName = :blockName");
     query.bindValue(":blockName", blockName);
 
     if (!query.exec()) {
-        qDebug() << "Failed to execute query:" << query.lastError();
+        qDebug() << "Failed to execute query:" << query.lastError().text();
         return;
     }
 
-    bool studentFound = false;
-
-    // Check if the student ID exists in the block
+    QString studentIDsString;
     if (query.next()) {
-        QString studentIDs = query.value("studentIDs").toString();
-        QStringList studentIDList = studentIDs.split(',');
-
-        if (studentIDList.contains(id)) {
-            studentFound = true;
-        }
+        studentIDsString = query.value("studentIDs").toString();
     }
 
-    // Update the UI based on the result
-    if (studentFound) {
+    QStringList studentIDsList = studentIDsString.split(",");
+    if (studentIDsList.contains(id)) {
         ui->checkStatus->setText("Student ID " + id + " is in block " + blockName);
     } else {
         ui->checkStatus->setText("Student ID " + id + " is NOT in block " + blockName);
     }
 }
 
-
-
 void exam::on_pushButton_2_clicked()
 {
     int studentId = ui->stdId->text().toInt();
     ui->pushButton_2->setText("Generating...");
+
     QSqlQuery query;
     query.prepare("SELECT * FROM students WHERE id = :id");
     query.bindValue(":id", studentId);
+
     if (!query.exec()) {
         qDebug() << "Failed to execute query:" << query.lastError();
         return;
     }
 
-    QSqlQuery query2;
-    query2.prepare("SELECT blockName FROM blocks WHERE FIND_IN_SET(:id, studentIds) > 0");
-    query2.bindValue(":id", studentId);
+    QString blockName = "Unknown";
+    if (query.first()) {
+        // Query to find the block where the student belongs
+        QSqlQuery blockQuery;
+        blockQuery.prepare("SELECT blockName FROM blocks WHERE studentIDs LIKE :studentId");
+        blockQuery.bindValue(":studentId", "%" + QString::number(studentId) + "%");
 
-    if (!query2.exec()) {
-        qDebug() << "Failed to execute query:" << query2.lastError();
+        if (!blockQuery.exec()) {
+            qDebug() << "Failed to execute query:" << blockQuery.lastError();
+            return;
+        }
+
+        if (blockQuery.next()) {
+            blockName = blockQuery.value("blockName").toString();
+        }
+
+        // Setup the printer for PDF generation
+        QPrinter printer(QPrinter::HighResolution);
+        printer.setOutputFormat(QPrinter::PdfFormat);
+
+        // Set the PDF output path to the user's Documents/Slips folder
+        QString documentsDir = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
+        QString slipsDir = documentsDir + "/Slips";
+
+        QDir dir;
+        if (!dir.exists(slipsDir)) {
+            dir.mkpath(slipsDir);  // Create Slips directory if it doesn't exist
+        }
+
+        QString pdfFilePath = slipsDir + "/student_slip.pdf";
+        printer.setOutputFileName(pdfFilePath);
+
+        QPainter painter(&printer);
+        painter.setFont(QFont("Helvetica", 18, 2));
+
+        // Draw the school name as the heading
+        painter.drawText(2500, 100, "University of Sufism & Modern Sciences");
+
+        // Draw a line below the heading
+        painter.drawLine(0, 500, 800, 70); // Adjust the coordinates to fit your needs
+        painter.setFont(QFont("Helvetica", 14));
+
+        painter.setFont(QFont("Helvetica", 12));
+        painter.drawText(100, 700, "Student ID: " + query.value("id").toString());
+        painter.drawText(100, 1000, "Student Name: " + query.value("name").toString());
+        painter.drawText(100, 1500, "Student CNIC: " + query.value("cnic").toString());
+        painter.drawText(100, 2000, "Student Class: " + query.value("new_class").toString());
+        painter.drawText(100, 2500, "Father Name: " + query.value("father_name").toString());
+        painter.drawText(100, 3000, "Block: " + blockName);
+
+        painter.end();
+        ui->pushButton_2->setText("Generated");
+
+        QString mainpath = "file:///" + pdfFilePath;
+        mainpath.replace(" ", "%20");
+
+        qDebug() << "Formatted path: " << mainpath;
+
+        QDesktopServices::openUrl(QUrl(mainpath));
+    } else {
+        QMessageBox::information(this, "Error", "No student found with this ID");
     }
-
-    // Setup the printer for PDF generation
-    QPrinter printer(QPrinter::HighResolution);
-    printer.setOutputFormat(QPrinter::PdfFormat);
-    printer.setOutputFileName("student_slip.pdf");
-
-    QPainter painter(&printer);
-    painter.setFont(QFont("Helvetica", 18, 2));
-
-    // Draw the school name as the heading
-    painter.drawText(2500, 100, "Univeristy of Sufism & Modern Sciences"); // Replace with your school name
-
-    // Draw a line below the heading
-    painter.drawLine(0, 500, 800, 70); // Adjust the coordinates to fit your needs
-    painter.setFont(QFont("Helvetica", 14));
-    if (query.exec()) {
-        if (query.first()) {
-            painter.setFont(QFont("Helvetica", 12));
-            painter.drawText(100, 700, "Student ID: " + query.value("id").toString());
-            painter.drawText(100, 1000, "Student Name: " + query.value("name").toString());
-            painter.drawText(100, 1500, "Student CNIC: " + query.value("cnic").toString());
-            painter.drawText(100, 2000, "Student Class: " + query.value("new_class").toString());
-            painter.drawText(100, 2500, "Father Name: " + query.value("father_name").toString());
-            painter.drawText(100, 3000, "Block: " + query2.value(0).toString());
-        } else {
-            QMessageBox::information(this, "Error", "No student found with this ID");
-        }}
-
-    ui->pushButton_2->setText("Generated");
-    QString currentDir = QDir::currentPath();
-    qDebug() << "Current directory: " << currentDir << "/student_slip.pdf";
-
-    // Ensure the path is correctly formatted as a file URL
-    QString mainpath = "file:///" + currentDir + "/student_slip.pdf";
-    mainpath.replace(" ", "%20"); // Replace spaces with %20
-
-    qDebug() << "Formatted path: " << mainpath;
-
-    QDesktopServices::openUrl(QUrl(mainpath));
-
-    painter.end();
 }
-
 
 void exam::on_addTeacher_clicked()
 {
@@ -284,4 +321,30 @@ void exam::on_addTeacher_clicked()
     ui->Teachers->resizeColumnsToContents();
     ui->Teachers->show();
 }
+
+
+void exam::on_deleteallblocks_clicked()
+{
+    QSqlQuery query;
+
+    // SQL query to delete the entire blocks table
+    if (!query.exec("DROP TABLE IF EXISTS blocks")) {
+        // If the query fails, show an error message
+        qDebug() << "Failed to delete blocks table:" << query.lastError();
+        QMessageBox::warning(this, "Error", "Failed to delete blocks table: " + query.lastError().text());
+        return;
+    }
+
+    // SQL query to delete the entire blocks table
+    if (!query.exec("DROP TABLE IF EXISTS teachersBlock")) {
+        // If the query fails, show an error message
+        qDebug() << "Failed to delete teachers blocks table:" << query.lastError();
+        QMessageBox::warning(this, "Error", "Failed to delete blocks table: " + query.lastError().text());
+        return;
+    }
+
+    // Notify the user that the table was successfully deleted
+    QMessageBox::information(this, "Success", "All blocks have been successfully deleted.");
+}
+
 

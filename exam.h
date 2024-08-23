@@ -24,6 +24,8 @@ private slots:
 
     void on_addTeacher_clicked();
 
+    void on_deleteallblocks_clicked();
+
 private:
     Ui::exam *ui;
 };

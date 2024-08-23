@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
     }
 
     // Simulate some loading time
-    QThread::sleep(3); // sleep for 3 seconds
+    QThread::sleep(4); // sleep for 3 seconds
 
     // Initialize the main window
     MainWindow w;

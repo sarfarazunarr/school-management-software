@@ -13,6 +13,8 @@ UpdateStudent::UpdateStudent(QWidget *parent)
     , ui(new Ui::UpdateStudent)
 {
     ui->setupUi(this);
+    setWindowTitle("Update Student - Apna School");
+    setWindowIcon(QIcon(":/new/images/C:/Users/Administrator/Downloads/school.png"));
 }
 
 UpdateStudent::~UpdateStudent()

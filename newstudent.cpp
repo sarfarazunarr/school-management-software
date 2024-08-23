@@ -11,6 +11,8 @@ NewStudent::NewStudent(QWidget *parent)
     , ui(new Ui::NewStudent)
 {
     ui->setupUi(this);
+    setWindowTitle("New Student - Apna School");
+    setWindowIcon(QIcon(":/new/images/C:/Users/Administrator/Downloads/school.png"));
 }
 
 NewStudent::~NewStudent()

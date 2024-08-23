@@ -11,6 +11,9 @@ class Timetable : public QMainWindow
 {
     Q_OBJECT
 
+public slots:
+    void getNewData();
+
 public:
     explicit Timetable(QWidget *parent = nullptr);
     ~Timetable();

@@ -15,6 +15,9 @@ public:
     explicit Newtimetable(QWidget *parent = nullptr);
     ~Newtimetable();
 
+signals:
+    void updateTimeTable();
+
 private slots:
     void on_pushButton_clicked();
 

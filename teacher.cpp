@@ -15,7 +15,8 @@ Teacher::Teacher(QWidget *parent)
     , ui(new Ui::Teacher)
 {
     ui->setupUi(this);
-
+    setWindowTitle("Teachers - Apna School");
+    setWindowIcon(QIcon(":/new/images/C:/Users/Administrator/Downloads/school.png"));
     // Setup the teacher data table
     updateTeacher();
 
